@@ -1,0 +1,37 @@
+import React, { useEffect, useState } from 'react';
+import { GetAllDonates, GetAllDonates } from '../utils/donateUtil';
+
+const Donate = () => {
+    const [donate, setDonate] = useState([]);
+
+    useEffect(()=>{
+        console.log("your donate");
+        GetAllDonates().then(res=> {
+            console.log(res);
+            setDonate(res);
+        })
+    },[]);
+    useEffect(()=>{
+        console.log("your donate");
+        GetAllDonates().then(res=> {
+            console.log(res);
+            setDonate(res);
+        })
+    },[]);
+
+    
+    return(<>
+      <h1>כאן יוצגו תרומות</h1>
+      {
+        donate.map((donate,index) => {
+            return <div>
+                <span>מספר תרומה: {donate.userId}</span><br/>
+                <span>שם רב: {donate.ravId}</span>
+            </div>
+            // <User user={user}></User>
+        })
+      }
+    </>);
+}
+
+export default Users;

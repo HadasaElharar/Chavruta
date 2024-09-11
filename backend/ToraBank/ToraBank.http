@@ -1,0 +1,6 @@
+@ToraBank_HostAddress = http://localhost:5253
+
+GET {{ToraBank_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
